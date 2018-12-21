@@ -1,0 +1,13 @@
+<!--pages/myCollect/myCollect.wxml-->
+<view class='container'>
+  <!-- <view class='title'>我的收藏</view> -->
+  <block wx:for='{{collectDatas}}' wx:key='id'>
+    <navigator class='list' url='../policyDetail/policyDetail?id={{item.id}}'>
+      <text class='title'>{{item.title}}</text>
+      <view class='sbsj' wx:if='{{item.nature==1}}'><text class='declaring'>申报时间</text>{{item.beginDate}}-{{item.endDate}}</view>
+      <text class='area'>{{item.province}}{{item.city}}</text>
+      <text class='date'>{{item.datetime}}</text>
+    </navigator>
+  </block>
+  
+</view>

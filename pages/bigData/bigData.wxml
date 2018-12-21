@@ -1,0 +1,73 @@
+<!--pages/bigData/bigData.wxml-->
+<!-- 大数据结果页 -->
+<view class='container'>
+
+  <!-- 搜索条件部分 -->
+  <view class='top'>
+    <icon class='search_icon' type='search' color='#09b677' size='20'></icon>
+    <input class='search' type='text' name='search' value='{{keyword}}' bindinput='getValue' bindconfirm='getBigDatas'/>
+    <view class='filter' bindtap='showHighSearch'>筛选条件</view>
+    <!-- 高级搜索遮罩层 -->
+    <view class='filter_mask' style='display:{{highSearchShow}}' bindtap='hideHighSearch'></view>
+    <!-- 高级搜索 -->
+    <view class='high_search' style='display:{{highSearchShow}}'>
+      <!-- 年度 -->
+      <view class="section">
+        <view class="section__title">年度</view>
+        <picker bindchange="bindYearChange" value="{{yearIndex}}" range="{{yearArr}}">
+          <view class="picker">{{yearArr[yearIndex]}}</view>
+        </picker>
+      </view>
+      <!-- 地区 -->
+      <view class="section">
+        <view class="section__title">地区</view>
+        <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+          <view class="picker">{{region[0]}}-{{region[1]}}-{{region[2]}}</view>
+        </picker>
+      </view>
+      <!-- 项目类型 -->
+      <view class="section">
+        <view class="section__title">项目类型</view>
+        <picker bindchange="bindProjectChange" value="{{projectIndex}}" range="{{projectArr}}">
+          <view class="picker">{{projectArr[projectIndex]}}</view>
+        </picker>
+      </view>
+      <!-- 主管部门 -->
+      <view class="section">
+        <view class="section__title">主管部门</view>
+        <picker bindchange="bindDepartmentChange" value="{{departmentIndex}}" range="{{departmentArr}}">
+          <view class="picker">{{departmentArr[departmentIndex]}}</view>
+        </picker>
+      </view>
+      <view class='section_btn'>
+        <button bindtap='hideHighSearch'>取消</button>
+        <button bindtap='confirmSearch'>确认</button>
+      </view>
+    </view>
+
+  </view>
+
+  <!-- 结果列表 -->
+  <view class='lists'>
+    <block wx:for='{{listDatas}}' wx:key='id'>
+      <navigator class='list' url='../bigDataDetail/bigDataDetail?id={{item.id}}'>
+        <rich-text class='title' nodes='{{item.projecname}}'></rich-text>
+        <view wx:if='{{item.specialmum!=""}}' class='specialmum'>专项：<rich-text nodes='{{item.specialmum}}'></rich-text></view>
+        <view class='other'>
+          <view class='address'>
+            <image src='../../icon/address.png'></image>
+            <rich-text nodes='{{item.province}}'></rich-text>
+            <rich-text nodes='{{item.city}}'></rich-text>
+            <rich-text nodes='{{item.area}}'></rich-text>
+          </view>
+          <view class='date'>
+            <image src='../../icon/time.png'></image>
+            <rich-text nodes='{{item.year}}'></rich-text>
+          </view>
+          <image class='arrow' src='../../icon/arrow.png'></image>
+        </view>
+      </navigator>
+    </block>
+  </view>
+
+</view>  

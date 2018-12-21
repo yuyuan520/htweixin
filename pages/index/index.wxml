@@ -1,0 +1,89 @@
+<!--index.wxml-->
+<view class='container'>
+  <!-- 位置 -->
+  <view class='location'><image src='../../icon/address1.png'></image>{{location.city}}{{location.district}}</view>
+  <!-- 搜索框 -->
+  <view class='search'>
+    <icon class='search_icon' type='search' size='16'></icon>
+    <input type='text' name='search' placeholder-style='color:#7f8590' placeholder='请输入政策关键词' bindinput='getValue' bindconfirm='searchVaule' />
+
+      <!-- 导航 -->
+    <view class='nav_tab'>
+      <view class='nav_item {{navActive==7?"active":""}}' data-num='7' catchtap='changeNavActive'>订阅</view>
+      <view class='nav_item {{navActive==8?"active":""}}' data-num='8' catchtap='changeNavActive'>最新</view>
+      <view class='nav_item {{navActive==1?"active":""}}' data-num='1' catchtap='changeNavActive'>申报通知</view>
+      <view class='nav_item {{navActive==2?"active":""}}' data-num='2' catchtap='changeNavActive'>文件</view>
+      <view class='nav_item {{navActive==3?"active":""}}' data-num='3' catchtap='changeNavActive'>公示名录</view>
+      <view class='nav_item {{navActive==4?"active":""}}' data-num='4' catchtap='changeNavActive'>解读</view>
+      <view class='nav_item {{navActive==5?"active":""}}' data-num='5' catchtap='changeNavActive'>资讯</view>
+      <view class='nav_item last {{navActive==6?"active":""}}' data-num='6' catchtap='changeNavActive'>其他</view>
+      <view class='nav_fold' bindtap='showNavFold'>
+        <image src='../../icon/nav_fold.png' style='display:{{navIconTab1}}'></image>
+        <image src='../../icon/close.png' style='display:{{navIconTab2}}' catchtap='hideNavFold'></image>
+      </view>
+    </view>
+
+    <!-- 点击折叠导航出现其他选项   -->
+    <view class='nav_hide' style='display:{{display}}' catchtouchmove='true'>
+      <view class='nav_hide_title'>导航</view>
+      <view class='nav_text {{navActive==1?"active":""}}' data-num='1' catchtap='changeNavActive'>申报通知<icon type="clear" size='16' color='#fe8910' wx:if='{{navActive==1}}' catchtap='closeType' /></view>
+      <view class='nav_text {{navActive==2?"active":""}}' data-num='2' catchtap='changeNavActive'>文件<icon type="clear" size='16' color='#fe8910' wx:if='{{navActive==2}}' catchtap='closeType'/></view>
+      <view class='nav_text {{navActive==3?"active":""}}' data-num='3' catchtap='changeNavActive'>公示名录<icon type="clear" size='16' color='#fe8910' wx:if='{{navActive==3}}' catchtap='closeType'/></view>
+      <view class='nav_text {{navActive==4?"active":""}}' data-num='4' catchtap='changeNavActive'>解读<icon type="clear" size='16' color='#fe8910' wx:if='{{navActive==4}}' catchtap='closeType'/></view>
+      <view class='nav_text {{navActive==5?"active":""}}' data-num='5' catchtap='changeNavActive'>资讯<icon type="clear" size='16' color='#fe8910' wx:if='{{navActive==5}}' catchtap='closeType'/></view>
+      <view class='nav_text {{navActive==6?"active":""}}' data-num='6' catchtap='changeNavActive'>其他<icon type="clear" size='16' color='#fe8910' wx:if='{{navActive==6}}' catchtap='closeType'/></view>
+      <view class='nav_hide_title'>发布时间</view>
+
+      <view class='publishDate'>
+        <icon type="clear" size='16' color='#fe8910' wx:if='{{startDate!="起始时间"}}' bindtap='closePublishDate'/>
+          <picker mode="date" value="{{startDate}}" start="" end="" bindchange="bindDateChange">
+          <view class="startDate active" wx:if='{{startDate!="起始时间"}}'>
+            {{startDate}}
+          </view>
+          <view class="startDate" wx:else>
+            {{startDate}}
+          </view>
+        </picker>
+      </view>
+
+      <view class='publishDate'>
+        <icon type="clear" size='16' color='#fe8910' wx:if='{{endDate!="截止时间"}}' bindtap='closePublishDate1'/>
+        <picker class='publishDate' mode="date" value="{{endDate}}" start="" end="" bindchange="bindDateChange1">
+          <view class="endDate active"  wx:if='{{endDate!="截止时间"}}'>
+            {{endDate}}
+          </view>
+          <view class="endDate" wx:else>
+            {{endDate}}
+          </view>
+        </picker>
+      </view>
+
+    </view>
+
+  </view>
+
+  <!-- 内容列表 -->
+  <view class='list'>
+    <view class='subscribe' wx:if='{{navActive==7&&listDatas.length!=0}}'>
+      <text class='subscribe_title'>我的订阅</text>
+      <navigator url='../subscribe/subscribe'>编辑</navigator>
+    </view>
+    <view class='no_subscribe' wx:if='{{navActive==7&&!listDatas}}'>
+      <text>您还没订阅内容哦</text>
+      <navigator url='../subscribe/subscribe'>立即订阅>></navigator>
+    </view>
+    <block wx:for='{{listDatas}}' wx:key='id'>
+      <navigator url='../policyDetail/policyDetail?id={{item.id}}'>
+        <text class='title'><text class='toTop' wx:if='{{item.top==1&&index<3}}'>置顶</text>{{item.title}}</text>
+        <view class='sbsj' wx:if='{{item.nature==1&&item.beginDate!=""&&item.endDate!=""}}'><text class='declaring'>申报时间</text>{{item.beginDate}}-{{item.endDate}}</view>
+        <text class='area'>{{item.province}}{{item.city}}{{item.area}}</text>
+        <text class='date'>{{item.datetime}}</text>
+      </navigator>  
+    </block> 
+  </view>
+  <view wx:if='{{listDatas.length==0}}' class='list7'>
+    暂无内容
+  </view>
+
+
+</view>

@@ -1,0 +1,49 @@
+/* pages/personal/personal.wxss */
+.part1 {
+  height: 150rpx;
+  line-height: 150rpx;
+  background: #fff;
+  padding-left: 30rpx;
+  margin-bottom: 20rpx;
+}
+.part1 .phone {
+  color: #333;
+  font-size: 34rpx;
+}
+.part1 .signout {
+  font-size: 28rpx;
+  color: #3e87fd;
+  margin-left: 30rpx;
+}
+.part2 {
+  margin-bottom: 40rpx;
+}
+.part2 .list {
+  display: flex;
+  align-items:center;/*垂直居中*/
+  height: 116rpx;
+  font-size: 34rpx;
+  color: #333;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  padding: 0 30rpx;
+}
+.part2 .list .l_img {
+  margin-right: 42rpx;
+  width: 36rpx;
+  height: 36rpx;
+}
+.part2 .list .small {
+  font-size: 24rpx;
+  color: #999;
+  margin-left: auto;
+}
+.part2 .list .small .orange {
+  color: #fe8910;
+}
+.part2 .list .r_img {
+  width: 24rpx;
+  height: 24rpx;
+  vertical-align: middle;
+  margin-left: 20rpx;
+}

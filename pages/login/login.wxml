@@ -1,0 +1,25 @@
+<!--pages/login/login.wxml-->
+<!-- 登录页 -->
+<view class='container'>
+  <view class='tip'>为保证服务顺利进行，请提供您的手机号</view>
+
+  <view class='phone'>
+    <image class='phone_img' src='../../icon/phone.png'></image>
+    <input class='phone_input' name='phone' type='text' placeholder-style='color:#666' placeholder='请输入手机号' bindinput='getPhone'/>
+  </view>
+  <view class='phone'>
+    <image class='phone_img' src='../../icon/dp.png'></image>
+    <input class='phone_input' name='phone' type='text' placeholder-style='color:#666' placeholder='请输密码' bindinput='getpassword'/>
+  </view>
+  <!-- <view class='code'>
+    <image class='code_img' src='../../icon/dp.png'></image>
+    <input class='code_input' name='code' type='text' placeholder-style='color:#666' placeholder='请输入验证码' bindinput='getCodeValue'/>
+    <view class='code_btn' bindtap='{{flag?"getCode":""}}'>{{codeText}}</view>
+  </view> -->
+  <view class='submit_box'>
+    <button bindtap='loginSubmit'>登录</button>
+  </view>
+  <view class='register_box'>
+      <navigator url='../register/register'>注册高企云账号</navigator>
+  </view>
+</view>  

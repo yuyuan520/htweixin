@@ -1,0 +1,75 @@
+/* pages/zcsd_detail/zcsd_detail.wxss */
+/* 政策速递详情页 */
+page {
+  background: #fff;
+}
+.top {
+  width:100%;
+  box-sizing:border-box;
+  padding: 60rpx 30rpx 30rpx;
+  background: #f8f8f8;
+}
+.top .title {
+  font-size: 34rpx;
+  color: #333;
+  padding-bottom: 43rpx;
+}
+.top .sorce,.top .area,.top .date {
+  font-size: 28rpx;
+  color: #999;
+  margin-bottom: 20rpx;
+}
+.main {
+  width: 100%;
+  background: #fff;
+  overflow: auto;
+}
+.main .main_content {
+  display: block;
+  font-size: 28rpx;
+  color: #494949;
+  padding-left: 30rpx; 
+  padding-right: 30rpx;
+  margin-bottom: 200rpx;
+  line-height: 60rpx;
+  word-break: break-all;
+}
+.main_part {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 110rpx;
+  padding-left: 30rpx;
+  border-top: 1px solid #fafafa; 
+  background: #fff;
+}
+.main_part button {
+  display: inline-block;
+  height: 110rpx;
+  line-height: 110rpx;
+  background: none;
+  border-radius: 0!important;
+  font-size: 34rpx;
+  color: #126ef7;
+  padding: 0;
+}
+.main_part button image{
+  width: 48rpx;
+  height: 48rpx;
+}
+.main_part button::after {
+  border: none;
+}
+.main_part button:nth-of-type(2) {
+  margin-left: 20rpx;
+}
+.main_part button:nth-of-type(2).active {
+  color: #fe8910;
+}
+.main_part button:last-of-type {
+  width: 300rpx;
+  background: #126ef7;
+  color: #fff;
+  float: right;
+}

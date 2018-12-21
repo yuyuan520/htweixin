@@ -1,0 +1,145 @@
+/* pages/bigData/bigData.wxss */
+
+/* 搜索条件部分 */
+.top {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 99;
+  background: #09b677;
+}
+.search_icon {
+  position:absolute;
+  left:50rpx;
+  top:24rpx;
+  z-index:20;
+}
+.top .search {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 550rpx;
+  height: 80rpx;
+  background: #fff;
+  border-radius: 80rpx;
+  font-size: 30rpx;
+  color: #999;
+  padding: 0 0 0 80rpx;
+  margin: 0 18rpx 10rpx 30rpx;
+}
+.top .filter {
+  display: inline-block;
+  color: #fff;
+  vertical-align: top;
+  font-size: 28rpx;
+  padding-top: 20rpx;
+}
+.top .filter_mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,.3);
+}
+.top .high_search {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 100;
+  width: 680rpx;
+  height: 100%;
+  background: #fff;
+}
+.top .high_search .section {
+  display: flex;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom: 1px solid #eee;
+  padding: 0 30rpx;
+}
+.top .high_search .section .section__title {
+  flex: 1;
+  font-size: 32rpx;
+  color: #09b677;
+}
+.top .high_search .section picker {
+  flex: 3;
+  text-align: center;
+  color: #666;
+  font-size: 26rpx;
+}
+.top .high_search .section_btn {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+.top .high_search .section_btn button {
+  flex: 1;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+  border: none;
+}
+.top .high_search .section_btn button:nth-of-type(2) {
+  background: #fe8910;
+  color: #fff;
+}
+/* 结果列表 */
+.lists {
+  width: 100%;
+  margin-top: 100rpx;
+}
+.list {
+  position: relative;
+  background: #fff;
+  padding: 30rpx 60rpx 30rpx 28rpx;
+  margin: 20rpx 30rpx 20rpx 30rpx;
+  border-radius: 20rpx;
+}
+.list rich-text {
+  display: inline-block;
+}
+.list .title {
+  font-size: 32rpx;
+  color: #333;
+}
+.list .specialmum {
+  width: 600rpx;
+  color: #666;
+  font-size: 28rpx;
+  margin-top: 14rpx;
+}
+.list .specialmum rich-text {
+  display:inline-block;
+  width:500rpx;
+  vertical-align:top;
+
+}
+.list .other {
+  color: #999;
+  font-size: 24rpx;
+}
+.list .address,.list .date {
+  display: inline-block;
+  padding-top: 32rpx;
+}
+.list .date {
+  margin-left: 70rpx;
+}
+.list .address image,.list .date image {
+  display: inline-block;
+  vertical-align: top;
+  width: 30rpx;
+  height: 30rpx;
+  padding-right: 8rpx;
+}
+.list .arrow {
+  position: absolute;
+  top: 40%;
+  right: 20rpx;
+  width: 50rpx;
+  height: 50rpx;
+}

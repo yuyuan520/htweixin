@@ -1,0 +1,65 @@
+<!--pages/znts/znts.wxml-->
+<!-- 智能推送 -->
+<view class='container'>
+
+  <!-- 顶部联系部分 -->
+  <view class='contact_box'>
+    <view class='contact_l'>
+      <view class='contact_l1'>400-166-3308</view>
+      <view class='contact_l2'>填写企业数据，查看针对性的企业政策服务</view>
+    </view>
+    <view class='contact_r'>
+      <button open-type='contact' class='contact_us'>在线咨询</button>
+    </view>
+  </view>
+
+  <!-- 表单部分 -->
+  <view class='form_part1' style='display:{{display1}}'>
+    <input class='first' type='text' name='companyname' value='{{companyname}}' placeholder-style='color:#82929f' placeholder='*企业名称' bindinput='getValue1'/>
+    <view class="section">
+      <picker mode="region" bindchange="regionChange" value="{{region}}" custom-item="{{customItem}}">
+        <view class="province">{{region[0]}}</view><view class="city">{{region[1]}}</view><view class="area">{{region[2]}}</view>
+      </picker>
+    </view>
+    <input type='text' name='address' placeholder-style='color:#82929f' placeholder='详细地址' bindinput='getValue2'/>
+    
+    <view class="section">
+      <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+        <view class="picker">
+          <input type='text' name='field' placeholder-style='color:#82929f' placeholder='*技术领域' value='{{field}}'/>
+        </view>
+      </picker>
+    </view>
+
+
+    <input type='text' name='contacts' placeholder-style='color:#82929f' placeholder='联系人' bindinput='getValue3'/>
+    <input type='text' name='phone' placeholder-style='color:#82929f' placeholder='联系电话' bindinput='getValue4'/>
+    <input type='text' name='hobby' placeholder-style='color:#82929f' placeholder='感兴趣的内容（如：申报通知；公示名录等）' bindinput='getValue6'/>
+    <button class='znts_btn' bindtap='submit'>开启企业政策智能推送</button>
+  </view>
+
+  <view class='part2' style='display:{{display2}}'>
+    <view class='big_title'>智能推送结果<text bindtap='changeMessage'>修改企业信息 ></text></view>
+    <view wx:if='{{listDatas.length!=0}}' class='list'>
+      <block wx:for='{{listDatas}}' wx:key='id'>
+        <navigator url='../policyDetail/policyDetail?id={{item.id}}'>
+          <text class='title'>
+            <text class='toTop' wx:if='{{item.top==1&&index<3}}'>置顶</text>
+            {{item.projectName}}
+          </text>
+          <!-- <view class='sbsj' wx:if='{{item.nature==1&&item.beginDate!=""&&item.endDate!=""}}'><text class='declaring'>申报时间</text>{{item.beginDate}}-{{item.endDate}}</view> -->
+          <text class='area'>{{item.province}}{{item.city}}{{item.area}}</text>
+          <text class='date'>{{item.createdate}}</text>
+        </navigator>  
+      </block> 
+    </view>
+    <view wx:else class='list7'>
+     暂无内容
+    </view>
+  </view>
+
+
+  
+
+</view>
+

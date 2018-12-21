@@ -1,0 +1,54 @@
+page {
+  background: #fff;
+}
+.container {
+  display: inherit;
+}
+.part0 {
+  width: 100%;
+  background: #f8f8f8;
+  font-size: 28rpx;
+  padding: 20rpx 0 20rpx 30rpx;
+  color: #666;
+}
+.part0 image {
+  width: 32rpx;
+  height: 32rpx;
+  vertical-align: top;
+  margin-right: 10rpx;
+}
+.part1 {
+  width: 100%;
+  padding: 0 30rpx 44rpx;
+}
+.part1 .title {
+  font-size: 34rpx;
+  color: #333;
+  margin-bottom: 30rpx;
+  margin-top:60rpx;
+}
+.part1 .select {
+  display: inline-block;
+  min-width: 200rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  border: 1px solid #c7d7df;
+  color: #82929f;
+  font-size: 28rpx;
+  border-radius: 10rpx;
+  text-align: center;
+  margin-right:26rpx;
+  margin-bottom: 20rpx;
+}
+.part1 .select.active {
+  background: #fe8910;
+  color: #fff;
+}
+
+.confirmBtn {
+  margin-top: 40rpx;
+  background: #fe8910;
+  color: #fff;
+  width:660rpx;
+  display:inline-block;
+}

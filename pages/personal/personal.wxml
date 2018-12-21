@@ -1,0 +1,79 @@
+<!--pages/personal/personal.wxml-->
+<!-- 个人中心 -->
+<view class='contain'>
+  <view class='part1' wx:if='{{phone!=""}}'>
+    <text class='phone'>{{phone}}</text>
+    <text class='signout' bindtap='signout'>退出</text>
+  </view>
+  <view class='part1' wx:else>
+     <navigator url='../login/login' class='phone'>高企云账号登录/注册</navigator>
+  </view>
+
+  <!-- <view class='part2'>
+    
+    <navigator class='list' wx:if='{{phone!=""}}' url='../register/register'>
+      <image class='l_img' src='../../icon/wd1.png'></image>
+      <text>会员注册</text>
+      <view class='small'>
+        <image class='r_img' src='../../icon/arrow1.png'></image>
+      </view>
+    </navigator>
+    <navigator class='list' wx:else url='../register/register'>
+      <image class='l_img' src='../../icon/wd1.png'></image>
+      <text>会员注册</text>
+      <view class='small'>
+        <image class='r_img' src='../../icon/arrow1.png'></image>
+      </view>
+    </navigator>
+
+  </view> -->
+
+  <view class='part2'>
+    
+    <navigator class='list' wx:if='{{phone!=""}}' url='../subscribe/subscribe'>
+      <image class='l_img' src='../../icon/wd1.png'></image>
+      <text>我的订阅</text>
+      <view class='small'>
+        <image class='r_img' src='../../icon/arrow1.png'></image>
+      </view>
+    </navigator>
+    <navigator class='list' wx:else url='../login/login'>
+      <image class='l_img' src='../../icon/wd1.png'></image>
+      <text>我的订阅</text>
+      <view class='small'>
+        <image class='r_img' src='../../icon/arrow1.png'></image>
+      </view>
+    </navigator>
+
+    <navigator class='list' wx:if='{{phone!=""}}' url='../myCollect/myCollect'>
+      <image class='l_img' src='../../icon/wd2.png'></image>
+      <text>我的收藏</text>
+      <view class='small'><image class='r_img' src='../../icon/arrow1.png'></image></view>
+    </navigator>
+    <navigator class='list' wx:else url='../login/login'>
+      <image class='l_img' src='../../icon/wd2.png'></image>
+      <text>我的收藏</text>
+      <view class='small'><image class='r_img' src='../../icon/arrow1.png'></image></view>
+    </navigator>
+
+  </view>
+  
+  <view class='part2'>
+
+    <navigator class='list' url='../aboutUs/aboutUs'>
+      <image class='l_img' src='../../icon/wd5.png'></image>
+      <text>关于政策通</text>
+      <view class='small'><image class='r_img' src='../../icon/arrow1.png'></image></view>
+    </navigator>
+    <view class='list' bindtap='goGqy'>
+      <image class='l_img' src='../../icon/wd3.png'></image>
+      <text>官网平台</text>
+      <view class='small'><text>www.hights.cn</text><image class='r_img' src='../../icon/arrow1.png'></image></view>
+    </view>
+    <view class='list' bindtap='tel'>
+      <image class='l_img' src='../../icon/wd4.png'></image>
+      <text>服务热线</text>
+      <view class='small'><text>400-166-3308</text><image class='r_img' src='../../icon/arrow1.png'></image></view>
+    </view>
+  </view>
+</view>

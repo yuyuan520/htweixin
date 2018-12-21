@@ -1,0 +1,76 @@
+<!--pages/policy/policy.wxml-->
+<!-- 政策立项查询 -->
+<view class='container'>
+
+  <!-- 搜索条件部分 -->
+  <view class='top'>
+    <icon class='search_icon' type='search' color='#3e87fd' size='20'></icon>
+    <input class='search' type='text' name='search' value='{{keyword}}' bindinput='getValue' bindconfirm='getPolicy'/>
+    <view class='filter' bindtap='showHighSearch'>筛选条件</view>
+    <!-- 高级搜索遮罩层 -->
+    <view class='filter_mask' style='display:{{highSearchShow}}' bindtap='hideHighSearch'></view>
+    <view class='high_search' style='display:{{highSearchShow}}'>
+      <!-- 年度 -->
+      <view class="section">
+        <view class="section__title">年度</view>
+        <picker bindchange="bindYearChange" value="{{yearIndex}}" range="{{yearArr}}">
+          <view class="picker">{{yearArr[yearIndex]}}</view>
+        </picker>
+      </view>
+      <!-- 地区 -->
+      <view class="section">
+        <view class="section__title">地区</view>
+        <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+          <view class="picker">{{region[0]}}-{{region[1]}}-{{region[2]}}</view>
+        </picker>
+      </view>
+      <!-- 项目类型 -->
+      <view class="section">
+        <view class="section__title">项目类型</view>
+        <picker bindchange="bindProjectChange" value="{{projectIndex}}" range="{{projectArr}}">
+          <view class="picker">{{projectArr[projectIndex]}}</view>
+        </picker>
+      </view>
+      <!-- 主管部门 -->
+      <view class="section">
+        <view class="section__title">主管部门</view>
+        <picker bindchange="bindDepartmentChange" value="{{departmentIndex}}" range="{{departmentArr}}">
+          <view class="picker">{{departmentArr[departmentIndex]}}</view>
+        </picker>
+      </view>
+      <view class='section_btn'>
+        <button bindtap='hideHighSearch'>取消</button>
+        <button bindtap='confirmSearch'>确认</button>
+      </view>
+    </view>
+  </view>
+
+  <!-- 结果列表 -->
+  <view class='lists'>
+    <block wx:for='{{listDatas}}' wx:key='id'>
+      <view class='list'>
+        <rich-text class='title' nodes='{{item.companyName}}'></rich-text>
+        <view class='other'>
+          <view class='address'>
+            <image src='../../icon/address.png'></image>
+            <rich-text nodes='{{item.province}}'></rich-text>
+            <rich-text nodes='{{item.city}}'></rich-text>
+            <rich-text nodes='{{item.area}}'></rich-text>
+          </view>
+          <view class='batch' wx:if='{{item.batch!=""}}'>
+            <image src='../../icon/time.png'></image>批次
+            <rich-text nodes='{{item.batch}}'></rich-text>
+          </view>
+        </view>
+        <view class='project_summary'>
+          <view class='title' wx:if='{{item.type!=""}}'>项目类别：<rich-text nodes='{{item.type}}' class='content'></rich-text></view>
+          <view class='title'>项目名称：<rich-text nodes='{{item.name}}' class='content'></rich-text></view>
+          <view class='title'>立项额度：<rich-text nodes='{{item.quota}}' class='content'></rich-text>万元</view>
+          <view class='title directorUnit'>主管单位：<rich-text nodes='{{item.directorUnit}}' class='content'></rich-text></view>
+        </view>
+      </view>
+    </block>
+  </view>
+
+
+</view>  

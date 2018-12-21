@@ -1,0 +1,12 @@
+<view class='container'>
+  <view class='top'>
+    <view class='title'>{{detail.projecname}}</view>
+    <view class='specialmum'>专项：{{detail.specialmum}}</view>
+    <view class='managerway'>管理办法：{{detail.managerway}}</view>
+    <view class='supportobj'>支持对象：{{detail.supportobj}}</view>
+    <view class='endtime'>截止时间：{{detail.endtime}}</view>
+    <view class='chargedept'>主管部门：{{detail.chargedept}}</view>
+    <view class='fundfacilitie'>经费配套：{{detail.fundfacilitie}}</view>
+    <view class='condition'>申报条件：{{detail.applyterm}}</view>
+  </view>
+</view>

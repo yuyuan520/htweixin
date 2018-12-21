@@ -1,0 +1,22 @@
+<!--pages/qzcx/qzcx.wxml-->
+<!-- 企政查询 -->
+<view class='container'>
+
+  <view class='search_block'>
+    <view class='title'>政策大数据查询<text class='small'>查政策</text></view>
+    <view class='summary'>找到符合企业项目申报的政策</view>
+    <view class='serach_part'>
+      <input type='text' name='bigdata' placeholder-style='color:#82929f' placeholder='请输入政策关键词，如“工程中心”' bindconfirm='bigdataBtn' bindinput='getVaule1' /><button class='search_btn' bindtap='bigdataBtn'><icon type='search' color='#fff' size='18'></icon></button>
+    </view>
+  </view>
+
+  <view class='search_block'>
+    <view class='title'>企业立项查询<text class='small'>查公司立项</text></view>
+    <view class='summary'>一键了解企业申报的项目</view>
+    <view class='serach_part'>
+      <input type='text' name='policy' placeholder-style='color:#82929f' placeholder='请输入公司名称，如“高企云”' bindinput='getVaule2' bindconfirm='policyBtn' /><button class='search_btn' bindtap='policyBtn'><icon type='search' color='#fff' size='18'></icon></button>
+    </view>
+  </view>
+
+</view>
+

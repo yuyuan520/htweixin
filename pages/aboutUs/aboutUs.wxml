@@ -1,0 +1,8 @@
+<!--pages/aboutUs/aboutUs.wxml-->
+<view class='container'>
+  <view class='title'>关于政策通</view>
+  <view class='content'>
+  “高企云掌上政策通”是高企云平台最新开发的一款旨在提高用户获取最新政策，了解同行关注和申报项目的体验度与时效性，从而更好的规划自身，尽享政策红利的微信小程序。
+  </view>
+</view>
+

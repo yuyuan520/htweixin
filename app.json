@@ -1,0 +1,57 @@
+{
+  "pages":[
+  "pages/index/index",
+  "pages/qzcx/qzcx",        
+  "pages/bigData/bigData",
+  "pages/bigDataDetail/bigDataDetail",  
+  "pages/policy/policy",  
+  "pages/znts/znts",          
+  "pages/policyDetail/policyDetail",
+  "pages/personal/personal",
+  "pages/subscribe/subscribe",
+  "pages/myCollect/myCollect",
+  "pages/login/login",
+  "pages/logs/logs",
+  "pages/gqy/gqy",
+  "pages/aboutUs/aboutUs",
+  "pages/register/register"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#3e87fd",
+    "navigationBarTitleText": "高企云掌上政策通",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar":{
+    "color": "#7f8590",
+    "selectedColor": "#3c86fb",
+    "backgroundColor": "#fff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "icon/tabBar01.png",
+        "selectedIconPath": "icon/tabBar01_1.png",
+        "text": "政策监控"
+      },
+      {
+        "pagePath": "pages/qzcx/qzcx",
+        "iconPath": "icon/tabBar02.png",
+        "selectedIconPath": "icon/tabBar02_1.png",
+        "text": "企政查询"
+      },
+      {
+        "pagePath": "pages/znts/znts",
+        "iconPath": "icon/tabBar03.png",
+        "selectedIconPath": "icon/tabBar03_1.png",
+        "text": "智能推送"
+      },
+      {
+        "pagePath": "pages/personal/personal",
+        "iconPath": "icon/tabBar04.png",
+        "selectedIconPath": "icon/tabBar04_1.png",
+        "text": "我的"
+      }
+    ]
+  }
+}

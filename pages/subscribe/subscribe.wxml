@@ -1,0 +1,41 @@
+<!-- 订阅页面 -->
+<view class='container'>
+  <view class='part0'><image src='../../icon/address.png'></image>{{location.city}}{{location.district}}</view>
+  <view class='part1'>
+
+    <view class='region'>
+      <view class='title'>关注地区</view>
+        <picker class='select {{districtActive==0?"active":""}}' mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+          <view>{{district}}</view>
+        </picker>
+    </view>
+
+    <view class='title'>类型</view>  
+    <view class='select {{productTypeActive1==true?"active":""}}' data-select="1" bindtap='multipleSelection'>高新技术企业</view>
+    <view class='select {{productTypeActive2==true?"active":""}}' data-select="2" bindtap='multipleSelection'>研发机构</view>
+    <view class='select {{productTypeActive3==true?"active":""}}' data-select="3" bindtap='multipleSelection'>科研立项</view>
+    <view class='select {{productTypeActive4==true?"active":""}}' data-select="4" bindtap='multipleSelection'>科技成果</view>
+    <view class='select {{productTypeActive5==true?"active":""}}' data-select="5" bindtap='multipleSelection'>知识产权</view>
+    <view class='select {{productTypeActive6==true?"active":""}}' data-select="6" bindtap='multipleSelection'>财税金融</view>
+    <view class='select {{productTypeActive7==true?"active":""}}' data-select="7" bindtap='multipleSelection'>人才团队</view>
+    <view class='select {{productTypeActive8==true?"active":""}}' data-select="8" bindtap='multipleSelection'>其他</view>
+
+    <view class='title'>性质分类</view>  
+    <view class='select {{nature1==true?"active":""}}' data-select1='1' bindtap='multipleSelection1'>申报通知</view>
+    <view class='select {{nature2==true?"active":""}}' data-select1='2' bindtap='multipleSelection1'>文件</view>
+    <view class='select {{nature3==true?"active":""}}' data-select1='3' bindtap='multipleSelection1'>公示名录</view>
+    <view class='select {{nature4==true?"active":""}}' data-select1='4' bindtap='multipleSelection1'>解读</view>
+    <view class='select {{nature5==true?"active":""}}' data-select1='5' bindtap='multipleSelection1'>资讯</view>
+    <view class='select {{nature6==true?"active":""}}' data-select1='6' bindtap='multipleSelection1'>其他</view>
+
+    <view class='title'>时间范围</view>  
+    <view class='select {{timeRangesActive=="0"?"active":""}}' data-timeRange='0' bindtap='selectTime'>全部</view>
+    <view class='select {{timeRangesActive=="1"?"active":""}}' data-timeRange='1' bindtap='selectTime'>近一天</view>
+    <view class='select {{timeRangesActive=="2"?"active":""}}' data-timeRange='2' bindtap='selectTime'>近一周</view>
+    <view class='select {{timeRangesActive=="3"?"active":""}}' data-timeRange='3' bindtap='selectTime'>近十天</view>
+    <view class='select {{timeRangesActive=="4"?"active":""}}' data-timeRange='4' bindtap='selectTime'>近一个月内</view>
+
+    <button class='confirmBtn' bindtap='confirmSubmit'>确认订阅</button>
+
+  </view>
+</view>

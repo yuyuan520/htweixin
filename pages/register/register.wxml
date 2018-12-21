@@ -1,0 +1,40 @@
+<!--pages/register/register.wxml-->
+<!-- 注册页面 -->
+<view class='container'>
+  <view class='tip'>注册会员可推送更多信息</view>
+
+  <view class='phone'>
+    <image class='phone_img' src='../../icon/phone.png'></image>
+    <input class='phone_input' name='phone' type='text' placeholder-style='color:#666' placeholder='请输入手机号' bindinput='getPhone'/>
+  </view>
+  <view class='phone'>
+    <image class='phone_img' src='../../icon/dp.png'></image>
+    <input class='phone_input' name='password' type='text' placeholder-style='color:#666' placeholder='请输入密码' bindinput='getPassword'/>
+  </view>
+  <view class='phone'>
+    <image class='phone_img' src='../../icon/dp.png'></image>
+    <input class='phone_input' name='repassword' type='text' placeholder-style='color:#666' placeholder='确认密码' bindinput='getrePassword'/>
+  </view>
+
+  <view class='code'>
+    <!-- <image class='code_img' src='../../icon/dp.png'></image> -->
+    <input class='code_input' name='code' type='text' placeholder-style='color:#666' placeholder='请输入验证码' bindinput='gettxtCode'/>
+    <view class='code_btn'>
+      <image style='width:100%' class='code_btn' id="codeImg" src='https://www.hights.cn/code.do'>
+        
+      </image> 
+    </view>
+  </view>
+  <view class='code'>
+    <!-- <image class='code_img' src='../../icon/dp.png'></image> -->
+    <input class='code_input' name='code' type='text' placeholder-style='color:#666' placeholder='请输入验证码' bindinput='getCodeValue'/>
+    <view class='code_btn' bindtap='{{flag?"getCode":""}}'>{{codeText}}</view>
+  </view>
+
+  
+  
+  
+  <view class='submit_box'>
+    <button bindtap='registerSubmit'>注册高企云账号</button>
+  </view>
+</view>  

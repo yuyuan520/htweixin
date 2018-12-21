@@ -1,0 +1,85 @@
+/* pages/login/login.wxss */
+page {
+  background: #fff;
+}
+input {
+  display: inline-block;
+}
+/* 顶部提示 */
+.tip {
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 30rpx;
+  color: #333;
+  background: #f2f2f5;
+  padding-left: 40rpx;
+}
+/* 手机号区域 */
+.phone{
+  width: 100%;
+  padding: 50rpx 0;
+  margin-left: 30rpx;
+  border-bottom: 1px solid #ddd;
+  font-size: 34rpx;
+}
+/* 手机号输入框 */
+.phone_input {
+  width: 630rpx;
+}
+/* 验证码区域 */
+.code {
+  margin-left: 30rpx;
+  width: 100%;
+  font-size: 34rpx;
+}
+/* 验证码输入框 */
+.code_input {
+  vertical-align: top;
+  width: 430rpx;
+  height: 125rpx;
+}
+/* 获取验证码按钮 */
+.code_btn {
+  display: inline-block;
+  vertical-align: top;
+  width: 220rpx;
+  height: 125rpx;
+  line-height: 125rpx;
+  border-left: 1px solid #ddd;
+  color: #fd9635;
+  text-align: center;
+}
+.phone_img,.code_img {
+  width:60rpx;
+  height:60rpx;
+  margin-right: 30rpx;
+}
+.code_img {
+  margin-top: 30rpx;
+}
+/* 登录区域 */
+.submit_box {
+  width: 100%;
+  border-top: 1px solid #ddd;
+  padding-top: 285rpx;
+}
+.submit_box button {
+  width: 660rpx;
+  color: #fff;
+  background: -webkit-linear-gradient(#fec983,#fa7924);
+}
+/* 登录页面的注册按钮 */
+.register_box {
+  width: 88%;
+  height: 46px;
+  line-height: 46px;
+  border: 3px solid #fec983;
+  color: #fa7924;
+  border-radius:5px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+
+

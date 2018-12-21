@@ -1,0 +1,21 @@
+page {
+  background: #fff;
+}
+.top {
+  width:100%;
+  height: 100%;
+  box-sizing:border-box;
+  padding: 60rpx 30rpx 30rpx;
+}
+.top .title {
+  font-size: 34rpx;
+  color: #333;
+  padding-bottom: 43rpx;
+}
+.top .specialmum,.top .managerway,.top .supportobj,.top .endtime,.top .chargedept,.top .fundfacilitie,.top .condition {
+  font-size: 30rpx;
+  color: #494949;
+  margin-bottom: 40rpx;
+  line-height: 60rpx;
+}
+

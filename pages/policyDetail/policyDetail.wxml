@@ -1,0 +1,27 @@
+<!--pages/zcsd_detail/zcsd_detail.wxml-->
+<!-- 政策速递详情页 -->
+<!--index.wxml-->
+
+<view class='container'>
+  <view class='top'>
+    <view class='title'>{{detailData.title}}</view>
+    <view class='sorce'>政策来源：{{detailData.source}}</view>
+    <view class='area'>区域：{{detailData.province}}{{detailData.city}}</view>
+    <view class='date'>发布日期：{{detailData.datetime}}</view>
+    
+  </view>
+  <view class='main'>
+    <rich-text class='main_content' nodes="{{test}}"></rich-text>
+    <view class='main_part'>
+      <button id='share' class='share' open-type='share'><image src='../../icon/share1.png'></image></button>
+      <button class='{{collectActive?"active":""}} collect' bindtap='collect'>
+        <image wx:if='{{collectText=="收藏"}}' src='../../icon/star.png'></image>
+        <image wx:else src='../../icon/star1.png'></image>
+      </button>
+      <button open-type="contact">咨询</button>
+    </view>
+  </view>
+
+
+</view>
+

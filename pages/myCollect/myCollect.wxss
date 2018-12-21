@@ -1,0 +1,37 @@
+/* pages/myCollect/myCollect.wxss */
+navigator.list  {
+  width: 100%;
+  background: #fff;
+  padding: 35rpx 30rpx 40rpx;
+  border-bottom: 1px solid #f3f3f3;
+}
+.list .title {
+  display: block;
+  font-size: 34rpx;
+  color: #333;
+  margin: 0 30rpx 20rpx;
+}
+.list .declaring {
+  display: inline-block;
+  padding: 2rpx 8rpx;
+  font-size: 24rpx;
+  color: #fff;
+  background: #f66e2f;
+  text-align: center;
+  border-radius: 2px;
+  margin-right: 20rpx;
+}
+.list .sbsj {
+  font-size: 26rpx;
+  color: #666;
+  padding:0 30rpx;
+}
+.list .area {
+  font-size: 24rpx;
+  color: #999;
+  margin: 0 40rpx 0 30rpx;
+}
+.list .date {
+  font-size: 24rpx;
+  color: #999;
+}
